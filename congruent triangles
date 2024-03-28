@@ -1,0 +1,109 @@
+print("Please enter the coordinates of the 3 " +
+"vertices of the first triangle:")
+print("Enter the first vertex (2 real numbers)")
+x1 = int(input("first x:"))
+y1 = int(input("first y:"))
+print("Enter the second vertex (2 real numbers)")
+x2 = int(input("second x:"))
+y2 = int(input("second y:"))
+print("Enter the third vertex (2 real numbers)")
+x3 = int(input("third x:"))
+y3 = int(input("third y:"))
+# calculate the length of the first side of the triangle
+if x1 == x2:
+    if y2 > y1:
+        a1 = y2-y1
+    else:
+        a1 = y1 - y2
+elif y1 == y2:
+    if x2 > x1:
+        a1 = x2-x1
+    else:
+        a1 = x1 - x2
+else:
+    a1 = int(((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2))**0.5)
+# calculate the length of the second side of the triangle
+if x2 == x3:
+    if y3 > y2:
+        b1 = y3-y2
+    else:
+        b1 = y2 - y3
+elif y2 == y3:
+    if x3 > x2:
+        b1 = x3-x2
+    else:
+        b1 = x2 - x3
+else:
+    b1 = int(((x2-x3)*(x2-x3)+(y2-y3)*(y2-y3))**0.5)
+# calculate the length of the third side of the triangle
+if x3 == x1:
+    if y1 > y3:
+        c1 = y1-y3
+    else:
+        c1 = y3-y1
+elif y3 == y1:
+    if x1 > x3:
+        c1 = x1-x3
+    else:
+        c1 = x3 - x1
+else:
+    c1 = int(((x3-x1)*(x3-x1)+(y3-y1)*(y3-y1))**0.5)
+print("Please enter the coordinates of the 3 " +
+"vertices of the second triangle:")
+print("Enter the first vertex (2 real numbers)")
+x11 = int(input("first x:"))
+y11 = int(input("first y:"))
+print("Enter the second vertex (2 real numbers)")
+x12 = int(input("second x:"))
+y12 = int(input("second y:"))
+print("Enter the third vertex (2 real numbers)")
+x13 = int(input("third x:"))
+y13 = int(input("third y:"))
+if x11 == x12:
+    if y12 > y11:
+        a2 = y12-y11
+    else:
+        a2 = y11 - y12
+elif y11 == y12:
+    if x12 > x11:
+        a2 = x12-x11
+    else:
+        a2 = x11 - x12
+else:
+    a2 = int(((x11-x12)*(x11-x12)+(y11-y12)*(y11-y12))**0.5)
+# calculate the length of the second side of the triangle
+if x12 == x13:
+    if y13 > y12:
+        b2 = y13-y12
+    else:
+        b2 = y12 - y13
+elif y12 == y13:
+    if x13 > x12:
+        b2 = x13-x12
+    else:
+        b2 = x12 - x13
+else:
+    b2 = int(((x12-x13)*(x12-x13)+(y12-y13)*(y12-y13))**0.5)
+# calculate the length of the third side of the triangle
+if x13 == x11:
+    if y11 > y13:
+        c2 = y11-y13
+    else:
+        c2 = y13-y11
+elif y13 == y11:
+    if x11 > x13:
+        c2 = x11-x13
+    else:
+        c2 = x13 - x11
+else:
+    c2 = int(((x13-x11)*(x13-x11)+(y13-y11)*(y13-y11))**0.5)
+print("The first triangle is (" + str(x1) + ",", str(y1) + ")" + " " + "(" + str(x2) + ",",str(y2) + ")" + " " + "(" + str(x3) + ",", str(y3) + ")")
+print("Its lengths are "+str(a1) + "," + str(b1) + "," + str(c1))
+print("The second triangle is (" + str(x1) + ",", str(y1) + ")" + " " + "(" + str(x2) + ",", str(y2) + ")" + " " + "(" + str(x3) + ",", str(y3) + ")")
+print("Its lengths are "+str(a2) + "," + str(b2) + "," + str(c2))
+if a1 == a2 or a1 == b2 or a1 == c2:
+    if b1 == a2 or b1 == b2 or a2 == c2:
+        if c1 == a2 or c1 == b2 or c1 == c2:
+            print('The triangles are congruent.')
+else:
+        print('the triangles are not congruent')
