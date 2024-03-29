@@ -2,17 +2,22 @@ print("hello user,please insert 3 sides of triangle")
 a = int(input("first side: "))
 b = int(input("second side: "))
 c = int(input("third side: "))
+if a < 0 or b < 0 or c < 0:
+    print("one or more of the sides are negative")
+else:
+    print(
+        "The lengths of the triangle sides are: " + str(a), "," + str(b) + "," + str(c))
 p = (a + b + c) / 2
 perimeter = a + b + c
 s = (p * (p - a) * (p - b) * (p - c)) ** 0.5
-round_s = round(s, 2)
-if a < 0 or b < 0 or c < 0:
-    print("one or more of the sides are negative")
-elif b > c:
-    print("The given three sides don't represent a triangle")
+if p > a:
+    if p > b:
+        if p > c:
+            print("The perimeter of the triangle is: " + str(perimeter))
+            print("The area of the triangle is: " + str(s))
+        else:
+            print('The given three sides don'+ "'" + 't represent a triangle')
+    else:
+        print('The given three sides don'+ "'" + 't represent a triangle')
 else:
-    print(
-        "The lengths of the triangle sides are: " + str(a), "," + str(b) + "," + str(c)
-    )
-    print("The perimeter of the triangle is: " + str(perimeter))
-    print("The area of the triangle is: " + str(round_s))
+    print('The given three sides don'+ "'" + 't represent a triangle')
